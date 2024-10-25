@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include "sous_prog.h"
 
 int main(void)
 {
+    char plat[N][N];
     printf("Hello, World!\n");
-    int a,b,c,d;
-    printf('projet');
+
+    plat[N][N] = plateau();
     return 0;
 }

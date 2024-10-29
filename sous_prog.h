@@ -8,4 +8,9 @@
 
 char plateau();
 
+void mvt_droite(int tab1[]);
+void mvt_gauche(int tab1[]);
+void mvt_haut(int tab1[]);
+void mvt_bas(int tab1[]);
+
 #endif //SOUS_PROG_H

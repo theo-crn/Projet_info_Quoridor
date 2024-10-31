@@ -3,10 +3,9 @@
 
 int main(void) {
     char plat[N][N];
-    int pion1[2] = {5,13};
+    int pion1[3] = {5,13,101};
 
-    printf("Hello, World!\n");
 
-    plat[N][N] = plateau();
+
     return 0;
 }

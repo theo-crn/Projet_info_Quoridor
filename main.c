@@ -22,8 +22,5 @@ int main(void) {
     placement(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
     affiche(plate); //affichage du plateau avec les pions
 
-
-
-
     return 0;
 }

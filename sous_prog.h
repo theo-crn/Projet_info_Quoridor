@@ -3,7 +3,7 @@
 //
 
 #ifndef SOUS_PROG_H
-#define N 19 //taille du plateau
+#define N 20 //taille du plateau
 #define SOUS_PROG_H
 
 void plateau(char plate[N][N]);

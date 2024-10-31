@@ -3,8 +3,8 @@
 
 int main(void) {
     char plate[N][N]; //plateau de jeu
-    int a[3] = {1,9,101}; //pion1 {x;y;identification}
-    int b[3] = {17,9,102}; //pion2 {x;y;identification}
+    int a[3] = {2,9,101}; //pion1 {x;y;identification}
+    int b[3] = {18,9,102}; //pion2 {x;y;identification}
 
     plateau(plate); //initialisation plateau
     placement(plate,a,b); //placement des pions en début de jeu

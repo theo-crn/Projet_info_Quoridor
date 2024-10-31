@@ -4,8 +4,8 @@
 
 #ifndef PSEUDO_H
 #define PSEUDO_H
-#define nombre_joueurs_max 4
-#define longueur_pseduo_max 20
+#define longueur_pseudo_max 20
+#define nb_pseudo_max 4
 
-void pseudo (char pseudo [][longueur_pseduo_max], int nombre_joueurs_max);
+void pseudo(char pseudo[nb_pseudo_max][longueur_pseudo_max]);
 #endif //PSEUDO_H

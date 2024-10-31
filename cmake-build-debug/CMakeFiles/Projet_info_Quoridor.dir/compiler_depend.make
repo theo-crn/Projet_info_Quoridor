@@ -13,7 +13,22 @@ CMakeFiles/Projet_info_Quoridor.dir/main.c.obj: C:/Users/33749/Documents/ECE/INF
   C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
+  C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/pseudo.h \
   C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/sous_prog.h
+
+CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.obj: C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/pseudo.c \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/_mingw.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/_mingw_mac.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/_mingw_secapi.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
+  C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/pseudo.h
 
 CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj: C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/sous_prog.c \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/_mingw.h \
@@ -50,6 +65,8 @@ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include
 
 C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/_mingw_secapi.h:
 
+C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/pseudo.c:
+
 C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/sous_prog.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/swprintf.inl:
@@ -57,3 +74,5 @@ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include
 C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/vadefs.h:
 
 C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/sous_prog.c:
+
+C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/pseudo.h:

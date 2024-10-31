@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/main.c" "CMakeFiles/Projet_info_Quoridor.dir/main.c.obj" "gcc" "CMakeFiles/Projet_info_Quoridor.dir/main.c.obj.d"
+  "C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/pseudo.c" "CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.obj" "gcc" "CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.obj.d"
   "C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/sous_prog.c" "CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj" "gcc" "CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj.d"
   )
 

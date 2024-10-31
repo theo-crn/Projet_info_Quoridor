@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Projet_info_Quoridor.dir/main.c.obj"
   "CMakeFiles/Projet_info_Quoridor.dir/main.c.obj.d"
+  "CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.obj"
+  "CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.obj.d"
   "CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj"
   "CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj.d"
   "Projet_info_Quoridor.exe"

@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include "sous_prog.h"
+#include "pseudo.h"
 
 int main(void) {
+    char name[2][4];
+    pseudo(name);
     char plate[N][N]; //plateau de jeu
     int a[3] = {2,9,101}; //pion1 {x;y;identification}
     int b[3] = {18,9,102}; //pion2 {x;y;identification}

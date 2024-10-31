@@ -4,17 +4,17 @@
 #include <stdio.h>
 #include "pseudo.h"
 
-void pseudo (char pseudo [][longueur_pseduo_max], int nombre_joueurs_max)
+void pseudo(char pseudo[nb_pseudo_max][longueur_pseudo_max])
 {
     int i;
-    for (i = 0; i < nombre_joueurs_max; i++)
+    for (i = 0; i < nb_pseudo_max; i++)
     {
-        printf ("entrer le pseudo d'un joueur%d:", i++);
-        scanf ("%s", pseudo[i]);
+        printf("Entrer le pseudo du joueur %d:", i + 1);
+        scanf("%s", pseudo[i]);
     }
-    printf ("^les pseudos enregistreés sont:");
-    for (i = 0; i < nombre_joueurs_max; i++)
+    printf("Pseudos enregistrees: \n");
+    for(i = 0; i < nb_pseudo_max; i++)
     {
-        printf ("joueurs %d: %s/n",i++,pseudo[i]);
+        printf("joueurs %d: %s\n",i + 1,pseudo[i]);
     }
 }

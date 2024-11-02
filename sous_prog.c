@@ -100,8 +100,17 @@ void affiche(char plat[N][N]) {
 
 void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
 {
+    int j;
+    printf("combien il y a-t-il de joueurs?( 2 ou 4 )\n");
+    scanf("%d",&j);
+    while ((j!=2)&&(j!=4)) {
+        printf("il ne peut y avoir que 2 ou 4 joueurs, combien il y en t-il?");
+        scanf("%d",&j);
+    }
+
     int i;
-    for (i = 0; i < nb_pseudo_max; i++)
+
+    for (i = 0; i < j; i++)
     {
         printf("Entrer le pseudo du joueur %d, avec un maximum de %d caracteres\n", i + 1,longueur_pseudo_max);
         fgets(pseudo[i],longueur_pseudo_max+1,stdin);

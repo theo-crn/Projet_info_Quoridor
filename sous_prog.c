@@ -126,7 +126,6 @@ void deplacer(int pionuti[3]) {
     int fin = 1;
     int uti = 1;
     char mvtp;
-    if (pionuti[2] == 102){uti =2;}
 
     do {
         printf("Au tour du joueur %d \n",uti);
@@ -179,6 +178,15 @@ void deplacer(int pionuti[3]) {
 
         else {
             printf("coup non valide\n");
+        }
+        if(fin == 0)
+        {
+            if (uti < 4){
+                uti++;
+            }
+            else{
+                uti = 1;
+            }
         }
 
     }while (fin != 0);

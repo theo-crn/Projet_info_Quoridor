@@ -141,6 +141,7 @@ void deplacer(int pionuti[3]) {
         printf("Si vous voulez deplacer le pion a gauche, entrer 'g'\n");
         printf("Si vous voulez deplacer le pion vers le haut, entrer 'h'\n");
         printf("Si vous voulez deplacer le pion vers le bas, entrer 'b'\n");
+        printf("si vous voulez mettre un mur, entrer 'm'\n");
         scanf("%c", &mvtp);
 
 //aller à droite

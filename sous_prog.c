@@ -156,7 +156,7 @@ void deplacer(int pionuti[3]) {
         }
 
         else if (mvtp == 'h') {
-            if (pionuti[0]-1 > 0) {
+            if (pionuti[0]-1 > 1) {
                 pionuti[0] = pionuti[0]-2;
                 fin = 0;
             }
@@ -166,7 +166,7 @@ void deplacer(int pionuti[3]) {
         }
 
         else if (mvtp == 'b') {
-            if (pionuti[0]+1 < N-1) {
+            if (pionuti[0]+1 < N) {
                 pionuti[0] = pionuti[0]+2;
                 fin = 0;
             }

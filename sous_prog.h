@@ -19,7 +19,7 @@ void affiche(char plate[N][N]);
 void pseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max]);
 
 
-void deplacer(char plate[N][N], int pion[3]);
+void deplacer(int pion[3]);
 
 void mvt_droite(int tab1[]);
 void mvt_gauche(int tab1[]);

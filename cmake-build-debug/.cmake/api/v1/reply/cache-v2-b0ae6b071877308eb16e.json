@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/theop/Documents/cours ece/ING1/informatique/JetBrains/CLion 2024.2.1/bin/ninja/win/x64/ninja.exe"
+			"value" : "C:/Users/theop/DOCUME~1/COURSE~1/ING1/INFORM~1/JETBRA~1/CLION2~1.1/bin/ninja/win/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",

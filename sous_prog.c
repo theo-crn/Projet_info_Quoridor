@@ -43,15 +43,27 @@ void plateau(char plat[N][N]) {
     {
         for (j = 0; j < N; j++) {
             if (i == 0) {
-                if(j==0) {
+                if(j==0 || j == 1 || j == 2 || j == N-1 || j == N-2) {
                     plat[i][j] = esp;
                 } else {
-                    plat[i][j] = 'a' + j - 1;
+                    plat[i][j] = 'a' + j - 3;
                 }
             }
 
-            else if (j == 0) {
-                plat[i][j] = 'A' + i - 1;
+            else if (i == 1) {
+                for (j = 0; j < N; j++) {
+                    plat[i][j] = murh;
+                }
+            }
+
+            else if (i == N-1) {
+                for (j = 0; j < N; j++) {
+                    plat[i][j] = murh;
+                }
+            }
+
+            else if (j == 0 && i > 1) {
+                plat[i][j] = 'A' + i - 2;
             }
 
             else if (i%2 != 0) //ligne murs horizontals
@@ -65,11 +77,12 @@ void plateau(char plat[N][N]) {
             {
                 if (j==1 || j==N-1){plat[i][j] = murv;}
                 else if (j%2 != 0){plat[i][j] = esp;}
-                else {plat[i][j] = murv;} //bon courage :)
+                else {plat[i][j] = murv;}
             }
         }
     }
 }
+
 void placement(char plate[N][N],int piona[3], int pionb[3]) {
     int i,j;
     plate[piona[0]][piona[1]] = '1';
@@ -90,7 +103,7 @@ void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
     int i;
     for (i = 0; i < nb_pseudo_max; i++)
     {
-        printf("Entrer le pseudo du joueur %d, avec un maximum de %d caracteres", i + 1,longueur_pseudo_max);
+        printf("Entrer le pseudo du joueur %d, avec un maximum de %d caracteres\n", i + 1,longueur_pseudo_max);
         fgets(pseudo[i],longueur_pseudo_max+1,stdin);
         size_t t = strlen(pseudo[i]);
         if (t > 0 && pseudo[i][t - 1] == '\n') {
@@ -100,7 +113,7 @@ void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
     }
 }
 
-void deplacer(char plat[N][N], int pionuti[3]) {
+void deplacer(int pionuti[3]) {
     int fin = 1;
     int uti = 1;
     char mvtp;

@@ -192,7 +192,7 @@ void deplacer(int pionuti[3]) {
 //changement de joueur
         if(fin == 0)
         {
-            if (uti < 4){
+            if (uti!=4){
                 uti++;
             }
             else{
@@ -200,7 +200,7 @@ void deplacer(int pionuti[3]) {
             }
         }
 
-    }while (fin != 0);
+    }while (fin != 0); //la c'est infini, il faudrai mettre dès qu'un pion arrive de l'autre coté du plateau
 }
 
 void mvt_droite(int tab[]) {

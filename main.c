@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "sous_prog.h"
-#include "pseudo.h"
 
 int main(void) {
     char name[2][4];

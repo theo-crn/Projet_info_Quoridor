@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sous_prog.h"
-
+//menu de base du jeu
 void menu1(int ch) {
     char strch;
     int fin = 0;
@@ -31,7 +31,7 @@ int quitter() {
     if (strch == 'q'){fin = 0;}
     return fin;
 }
-
+//création du plateau de jeu, utilisation de N car défini dans sous_prog.h
 void plateau(char plat[N][N]) {
     int i,j;
     char murv = '|'; //mur vertical
@@ -82,12 +82,13 @@ void plateau(char plat[N][N]) {
         }
     }
 }
-
+//module dé placement
 void placement(char plate[N][N],int piona[3], int pionb[3]) {
     int i,j;
     plate[piona[0]][piona[1]] = '1';
     plate[pionb[0]][pionb[1]] = '2';
 }
+//module d'affichage
 void affiche(char plat[N][N]) {
     int i,j;
     for (i = 0; i < N; i++) {
@@ -98,6 +99,7 @@ void affiche(char plat[N][N]) {
     }
 }
 
+//module pseudo
 void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
 {
     int j;
@@ -127,11 +129,12 @@ void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
     }
 }
 
+//module déplacer
 void deplacer(int pionuti[3]) {
     int fin = 1;
     int uti = 1;
     char mvtp;
-
+//toutes les possibilités du joueurs
     do {
         printf("Au tour du joueur %d \n",uti);
         printf("Si vous voulez deplacer le pion a droite, entrer 'd'\n");
@@ -140,6 +143,7 @@ void deplacer(int pionuti[3]) {
         printf("Si vous voulez deplacer le pion vers le bas, entrer 'b'\n");
         scanf("%c", &mvtp);
 
+//aller à droite
         if (mvtp == 'd') {
             if (pionuti[1]+1 < N) {
                 pionuti[1] = pionuti[1]+2;
@@ -149,7 +153,7 @@ void deplacer(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-
+//aller à gauche
         else if (mvtp == 'g') {
             if (pionuti[1]-1 > 0) {
                 pionuti[1] = pionuti[1]-2;
@@ -159,7 +163,7 @@ void deplacer(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-
+//aller en haut
         else if (mvtp == 'h') {
             if (pionuti[0]-1 > 1) {
                 pionuti[0] = pionuti[0]-2;
@@ -169,7 +173,7 @@ void deplacer(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-
+//aller en bas
         else if (mvtp == 'b') {
             if (pionuti[0]+1 < N) {
                 pionuti[0] = pionuti[0]+2;
@@ -184,6 +188,7 @@ void deplacer(int pionuti[3]) {
         else {
             printf("coup non valide\n");
         }
+//changement de joueur
         if(fin == 0)
         {
             if (uti < 4){

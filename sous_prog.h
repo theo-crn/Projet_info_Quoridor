@@ -6,9 +6,14 @@
 #define N 20 //taille du plateau
 #define SOUS_PROG_H
 
+void menu1(int ch); //premier menu affiché, il ne sera utiliser qu'une fois par lancement
+int quitter(); //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
+
 void plateau(char plate[N][N]);
 void placement(char plate[N][N],int piona[3], int pionb[3]);
 void affiche(char plate[N][N]);
+
+
 
 void deplacer(char plate[N][N], int pion[3]);
 

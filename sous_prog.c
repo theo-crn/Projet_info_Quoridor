@@ -4,6 +4,33 @@
 #include <stdio.h>
 #include "sous_prog.h"
 
+void menu1(int ch) {
+    char strch;
+    int fin = 0;
+    do {
+        printf("\t\tMENU PRINCIPAL\n");
+        printf("\t\tEntrer 'q' pour quitter \n");
+        printf("\t\tEntrer 'l' pour lancer le jeu \n");
+        printf("\t\tEntrer 'v' pour voir les scores \n");
+        scanf("%c", &strch);
+
+        if (strch == 'q') {ch = 0; fin = 1;}
+        else if (strch == 'l') {ch = 1; fin = 1;}
+        else if (strch == 'v') {ch = 2; fin = 1;}
+
+        else (printf("\t\tEntree invalide\n"));
+
+    }while (fin !=1);
+}
+int quitter() {
+    char strch;
+    int fin = 1;
+    printf("\t\tEntrer 'q' pour quitter, 'c' pour continuer la partie\n");
+    scanf("%c", &strch);
+    if (strch == 'q'){fin = 0;}
+    return fin;
+}
+
 void plateau(char plat[N][N]) {
     int i,j;
     char murv = '|'; //mur vertical

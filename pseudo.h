@@ -7,5 +7,4 @@
 #define longueur_pseudo_max 20
 #define nb_pseudo_max 4
 
-void pseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max]);
 #endif //PSEUDO_H

@@ -10,7 +10,7 @@ int main(void) {
     int b[3] = {18,9,102}; //pion2 {x;y;identification}
     int choix = 1;
 
-
+    
     menu1(choix);
 
     do {

@@ -192,7 +192,7 @@ void deplacer(int pionuti[3]) {
 //changement de joueur
         if(fin == 0)
         {
-            if (uti!=4){
+            if (uti!= 4){//s'il n'y a que 2 joeurs=> uti!= 2
                 uti++;
             }
             else{

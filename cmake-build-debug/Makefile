@@ -152,30 +152,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_info_Quoridor.dir\build.make CMakeFiles/Projet_info_Quoridor.dir/main.c.s
 .PHONY : main.c.s
 
-pseudo.obj: pseudo.c.obj
-.PHONY : pseudo.obj
-
-# target to build an object file
-pseudo.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_info_Quoridor.dir\build.make CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.obj
-.PHONY : pseudo.c.obj
-
-pseudo.i: pseudo.c.i
-.PHONY : pseudo.i
-
-# target to preprocess a source file
-pseudo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_info_Quoridor.dir\build.make CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.i
-.PHONY : pseudo.c.i
-
-pseudo.s: pseudo.c.s
-.PHONY : pseudo.s
-
-# target to generate assembly for a file
-pseudo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_info_Quoridor.dir\build.make CMakeFiles/Projet_info_Quoridor.dir/pseudo.c.s
-.PHONY : pseudo.c.s
-
 sous_prog.obj: sous_prog.c.obj
 .PHONY : sous_prog.obj
 
@@ -212,9 +188,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... pseudo.obj
-	@echo ... pseudo.i
-	@echo ... pseudo.s
 	@echo ... sous_prog.obj
 	@echo ... sous_prog.i
 	@echo ... sous_prog.s

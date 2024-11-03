@@ -11,6 +11,8 @@ int main(void) {
     int choix = 1;
     int nbj = 2; //choix du nombre de joueur
 
+    regle();
+
 
     //menu1(choix);
 

@@ -16,6 +16,8 @@ void plateau(char plate[N][N]);
 void placement2(char plate[N][N],int piona[3], int pionb[3]);
 void affiche(char plate[N][N]);
 
+void regle();
+
 void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max],int nbj);
 
 

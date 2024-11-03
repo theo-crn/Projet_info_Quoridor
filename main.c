@@ -7,14 +7,15 @@ int main(void) {
     char plate[N][N]; //plateau de jeu
     int a[3] = {2,9,101}; //pion1 {x;y;identification}
     int b[3] = {18,9,102}; //pion2 {x;y;identification}
+
     int choix = 1;
     int nbj = 2; //choix du nombre de joueur
 
 
     //menu1(choix);
 
-    //do {
-        //choix = quitter;
+    do {
+        choix = quitter;
 
         plateau(plate); //initialisation plateau
         placement2(plate,a,b); //placement des pions en début de jeu
@@ -31,7 +32,8 @@ int main(void) {
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         affiche(plate); //affichage du plateau avec les pions
-    //}while (choix != 0);
+
+    }while (choix != 0);
 
     return 0;
 }

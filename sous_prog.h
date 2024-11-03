@@ -13,13 +13,13 @@ void menu1(int ch); //premier menu affiché, il ne sera utiliser qu'une fois par
 int quitter(); //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
 
 void plateau(char plate[N][N]);
-void placement(char plate[N][N],int piona[3], int pionb[3]);
+void placement2(char plate[N][N],int piona[3], int pionb[3]);
 void affiche(char plate[N][N]);
 
-void pseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max]);
+void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max],int nbj);
 
 
-void deplacer(int pion[3]);
+void action(int pion[3]);
 
 void mvt_droite(int tab1[]);
 void mvt_gauche(int tab1[]);

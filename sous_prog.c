@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sous_prog.h"
+
 //menu de base du jeu
 void menu1(int ch) {
     char strch;
@@ -31,6 +32,8 @@ int quitter() {
     if (strch == 'q'){fin = 0;}
     return fin;
 }
+
+
 //création du plateau de jeu, utilisation de N car défini dans sous_prog.h
 void plateau(char plat[N][N]) {
     int i,j;
@@ -82,12 +85,19 @@ void plateau(char plat[N][N]) {
         }
     }
 }
-//module dé placement
-void placement(char plate[N][N],int piona[3], int pionb[3]) {
-    int i,j;
+
+//module de placement des joueurs
+void placement2(char plate[N][N],int piona[3], int pionb[3]) {
     plate[piona[0]][piona[1]] = '1';
     plate[pionb[0]][pionb[1]] = '2';
 }
+void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int piond[3]) {
+    plate[piona[0]][piona[1]] = '1';
+    plate[pionb[0]][pionb[1]] = '2';
+    plate[pionc[0]][pionc[1]] = '3';
+    plate[piond[0]][piond[1]] = '4';
+}
+
 //module d'affichage
 void affiche(char plat[N][N]) {
     int i,j;
@@ -100,17 +110,18 @@ void affiche(char plat[N][N]) {
 }
 
 //module pseudo
-void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
+void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int nbj)
 {
     int j;
     printf("combien il y a-t-il de joueurs?( 2 ou 4 )\n");
     scanf("%d",&j);
+
     //il ne peut y avoir que 2 ou 4 joueurs
     while ((j!=2)&&(j!=4)) {
         printf("il ne peut y avoir que 2 ou 4 joueurs, combien il y en t-il?");
         scanf("%d",&j);
     }
-
+    nbj = j;
     int i;
 
     for (i = 0; i < j; i++)
@@ -129,11 +140,12 @@ void pseudo (char pseudo[nb_pseudo_max+1][longueur_pseudo_max])
     }
 }
 
-//module déplacer
-void deplacer(int pionuti[3]) {
+//module déplacement
+void action(int pionuti[3]) {
     int fin = 1;
     int uti = 1;
     char mvtp;
+
 //toutes les possibilités du joueurs
     do {
         printf("Au tour du joueur %d \n",uti);

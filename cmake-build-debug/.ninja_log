@@ -1,13 +1,17 @@
 # ninja log v6
-3	114	7515479814460499	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
-17	110	7515479465216612	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
-115	220	7515479815605149	Projet_info_Quoridor.exe	af147701ce2723c6
-6	438	7522572130434092	build.ninja	52191054f6a01e3e
-3	142	7522572130944078	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
-19	154	7522572131104095	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
-154	279	7522572132461168	Projet_info_Quoridor.exe	af147701ce2723c6
-21	135	7522614436399143	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
-3	96	7522614623201844	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
-96	219	7522614624135004	Projet_info_Quoridor.exe	af147701ce2723c6
+6	438	7523432391056433	build.ninja	52191054f6a01e3e
 3	101	7522614942626381	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
+21	135	7522614436399143	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
 102	235	7522614943613500	Projet_info_Quoridor.exe	af147701ce2723c6
+11	334	7523432391056433	build.ninja	52191054f6a01e3e
+4	115	7523432391435036	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
+116	252	7523432392549290	Projet_info_Quoridor.exe	af147701ce2723c6
+3	90	7523432918318467	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
+14	106	7523432918422180	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
+106	195	7523432919339307	Projet_info_Quoridor.exe	af147701ce2723c6
+3	93	7523461426680644	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
+4	96	7523461791235481	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
+3	78	7523462241730763	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
+5	105	7523462664758866	CMakeFiles/Projet_info_Quoridor.dir/main.c.obj	98671679c99bc8d7
+17	127	7523462664881094	CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj	e661989135dd92c2
+127	217	7523462665983130	Projet_info_Quoridor.exe	af147701ce2723c6

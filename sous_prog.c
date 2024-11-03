@@ -139,7 +139,7 @@ void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int nbj)
 
     }
 }
-
+//affichage des regles du jeu
 void regle() {
     char regle;
     printf("Si vous voulez afficher les regles, entrer 'r'\n");

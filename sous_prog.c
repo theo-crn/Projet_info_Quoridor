@@ -32,7 +32,13 @@ int quitter() {
     if (strch == 'q'){fin = 0;}
     return fin;
 }
+void choixact(int *ch) {
 
+    printf("Voulez-vous placer une barriere ou vous deplacer ?\n");
+    printf("Pour placer une barriere taper : 1 \n");
+    printf("Pour vous deplacer taper : 2 \n");
+    scanf("%d", &*ch);
+}
 
 //création du plateau de jeu, utilisation de N car défini dans sous_prog.h
 void plateau(char plat[N][N]) {
@@ -161,17 +167,16 @@ void action(int pionuti[3]) {
     int uti = 1;
     char mvtp;
 
-//toutes les possibilités du joueurs
+    //toutes les possibilités du joueurs
     do {
         printf("Au tour du joueur %d \n",uti);
         printf("Si vous voulez deplacer le pion a droite, entrer 'd'\n");
         printf("Si vous voulez deplacer le pion a gauche, entrer 'g'\n");
         printf("Si vous voulez deplacer le pion vers le haut, entrer 'h'\n");
         printf("Si vous voulez deplacer le pion vers le bas, entrer 'b'\n");
-        printf("si vous voulez mettre un mur, entrer 'm'\n");
         scanf("%c", &mvtp);
 
-//aller à droite
+        //aller à droite
         if (mvtp == 'd') {
             if (pionuti[1]+1 < N) {
                 pionuti[1] = pionuti[1]+2;
@@ -181,7 +186,7 @@ void action(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-//aller à gauche
+        //aller à gauche
         else if (mvtp == 'g') {
             if (pionuti[1]-1 > 0) {
                 pionuti[1] = pionuti[1]-2;
@@ -191,7 +196,7 @@ void action(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-//aller en haut
+        //aller en haut
         else if (mvtp == 'h') {
             if (pionuti[0]-1 > 1) {
                 pionuti[0] = pionuti[0]-2;
@@ -201,7 +206,7 @@ void action(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-//aller en bas
+        //aller en bas
         else if (mvtp == 'b') {
             if (pionuti[0]+1 < N) {
                 pionuti[0] = pionuti[0]+2;
@@ -216,7 +221,7 @@ void action(int pionuti[3]) {
         else {
             printf("coup non valide\n");
         }
-//changement de joueur
+        //changement de joueur
         if(fin == 0)
         {
             if (uti!= 4){//s'il n'y a que 2 joeurs=> uti!= 2
@@ -229,39 +234,9 @@ void action(int pionuti[3]) {
 
     }while (fin != 0); //la c'est infini, il faudrai mettre dès qu'un pion arrive de l'autre coté du plateau
 }
+void barrieres(){}
 
-void mvt_droite(int tab[]) {
-    if(tab[0] > 1) {
-        tab[0] = tab[0] + 2;
-    }
-    else {
-        printf("Cette action n'est pas possible");
-    }
-}
-void mvt_gauche(int tab[]) {
-    if(tab[0] < 17) {
-        tab[0] = tab[0] + 2;
-    }
-    else {
-        printf("Cette action n'est pas possible");
-    }
-}
-void mvt_haut(int tab[]) {
-    if(tab[1] > 1) {
-        tab[0] = tab[0] + 2;
-    }
-    else {
-        printf("Cette action n'est pas possible");
-    }
-}
-void mvt_bas(int tab[]) {
-    if(tab[1] < 17) {
-        tab[0] = tab[0] + 2;
-    }
-    else {
-        printf("Cette action n'est pas possible");
-    }
-}
+
 
 
 

@@ -11,6 +11,7 @@
 
 void menu1(int ch); //premier menu affiché, il ne sera utiliser qu'une fois par lancement
 int quitter(); //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
+void choixact(int *ch); //menu pour que le joueur choisisse s'il veut poser une barrière ou se déplacer
 
 void plateau(char plate[N][N]);//fonction qui cree le plateau de jeu
 void placement2(char plate[N][N],int piona[3], int pionb[3]);//fonction qui met a jour le plateau
@@ -22,13 +23,5 @@ void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max],int nbj);//fonct
 
 
 void action(int pion[3]);//fonction qui affiche les actions possibles du pion
-
-//différentes fonctions des mouvements du pion
-void mvt_droite(int tab1[]);
-void mvt_gauche(int tab1[]);
-void mvt_haut(int tab1[]);
-void mvt_bas(int tab1[]);
-
-
 void barrieres();
 #endif //SOUS_PROG_H

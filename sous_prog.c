@@ -46,10 +46,10 @@ void plateau(char plat[N][N]) {
     {
         for (j = 0; j < N; j++) {
             if (i == 0) {
-                if(j==0 || j == 1 || j == 2 || j == N-1 || j == N-2) {
+                if(j==0 || j == 1 || j == N-1 || j%2 ==0) {
                     plat[i][j] = esp;
                 } else {
-                    plat[i][j] = 'a' + j - 3;
+                    plat[i][j] = 'a' + j/2 -1;
                 }
             }
 
@@ -66,7 +66,12 @@ void plateau(char plat[N][N]) {
             }
 
             else if (j == 0 && i > 1) {
-                plat[i][j] = 'A' + i - 2;
+                if (i%2 == 0) {
+                    plat[i][j] = esp;
+                }
+                else {
+                    plat[i][j] = 'A' + i/2 - 1;
+                }
             }
 
             else if (i%2 != 0) //ligne murs horizontals

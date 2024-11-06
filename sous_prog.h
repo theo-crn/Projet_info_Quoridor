@@ -15,6 +15,7 @@ void choixact(int *ch); //menu pour que le joueur choisisse s'il veut poser une 
 
 void plateau(char plate[N][N]);//fonction qui cree le plateau de jeu
 void placement2(char plate[N][N],int piona[3], int pionb[3]);//fonction qui met a jour le plateau
+void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int piond[3]);//fonction qui met a jour le plateau pour quatre joueurs
 void affiche(char plate[N][N]);//fonction qui affiche le plateau de jeu
 
 void regle();//fonction qui affiche les regles du jeu

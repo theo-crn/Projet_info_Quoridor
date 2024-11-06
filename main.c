@@ -16,10 +16,16 @@ int main(void) {
     regle();
 
 
-    menu1(poinchoix);
+    if(menu1(poinchoix) == 0) {
+        return 0;
+    }
 
     do {
-        quitter(poinchoix);
+        if(quitter(poinchoix) == 0) {
+            return 0;
+        }
+
+
         plateau(plate); //initialisation plateau
         placement2(plate,a,b); //placement des pions en début de jeu
         affiche(plate); //affichage du plateau avec les pions

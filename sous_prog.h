@@ -9,8 +9,8 @@
 
 #define SOUS_PROG_H
 
-void menu1(int *ch); //premier menu affiché, il ne sera utiliser qu'une fois par lancement
-void quitter(int *ch); //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
+int menu1(int *ch); //premier menu affiché, il ne sera utiliser qu'une fois par lancement
+int quitter(int *ch); //menu utiliser à chaque tour de boucle du programme permettant de quitter le jeu
 void choixact(int *ch); //menu pour que le joueur choisisse s'il veut poser une barrière ou se déplacer
 
 void plateau(char plate[N][N]);//fonction qui cree le plateau de jeu

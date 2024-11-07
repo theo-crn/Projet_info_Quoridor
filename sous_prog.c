@@ -6,26 +6,30 @@
 #include "sous_prog.h"
 
 //menu de base du jeu
-void menu1(int *ch) {
+int menu1(int *ch) {
     int fin = 0;
     do {
-        printf("MENU PRINCIPAL\n");
+        printf("\t\tMENU PRINCIPAL\n");
         printf("Entrer 0 pour quitter \n");
         printf("Entrer 1 pour lancer le jeu \n");
         printf("Entrer 2 pour voir les scores \n");
         fflush(stdin);
         scanf("%d", &*ch);
         if (*ch == 0 || *ch == 1 || *ch == 2) {fin = 1;}
+        if(*ch == 0) {return 0;}
+        else if (*ch == 1 || *ch == 2){return 1;}
         else{printf("Entree invalide\n");}
 
     }while (fin !=1);
 }
-void quitter(int *ch) {    char strch;
+int quitter(int *ch) {
+    char strch;
     printf("\t\tEntrer 'q' pour quitter, 'c' pour continuer la partie\n");
     fflush(stdin);
     scanf("%c", &strch);
-    if (strch == 'q'){*ch = 0;}
+    if (strch == 'q'){return 0;}
 }
+
 void choixact(int *ch) {
     printf("Voulez-vous placer une barriere ou vous deplacer ?\n");
     printf("Pour placer une barriere taper : 1 \n");

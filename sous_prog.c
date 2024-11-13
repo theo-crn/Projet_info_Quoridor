@@ -6,7 +6,7 @@
 #include "sous_prog.h"
 
 //menu de base du jeu
-int menu1(int *ch) {
+int menuprim(int *ch) {
     int fin = 0;
     do {
         printf("\t\tMENU PRINCIPAL\n");
@@ -21,6 +21,7 @@ int menu1(int *ch) {
         else{printf("Entree invalide\n");}
 
     }while (fin !=1);
+    return 0;
 }
 int quitter(int *ch) {
     char strch;
@@ -31,15 +32,20 @@ int quitter(int *ch) {
 }
 
 void choixact(int *ch) {
-    printf("Voulez-vous placer une barriere ou vous deplacer ?\n");
-    printf("Pour placer une barriere taper : 1 \n");
-    printf("Pour vous deplacer taper : 2 \n");
-    fflush(stdin);
-    scanf("%d", &*ch);
+    int fin = 0;
+    do {
+        printf("Voulez-vous placer une barriere ou vous deplacer ?\n");
+        printf("Pour placer une barriere taper : 1 \n");
+        printf("Pour vous deplacer taper : 2 \n");
+        fflush(stdin);
+        scanf("%d", &*ch);
+        if (*ch == 1 || *ch == 2){fin = 1;}
+        else {printf("Entree invalide\n");}
+    }while (fin != 1);
 }
 
 //création du plateau de jeu, utilisation de N car défini dans sous_prog.h
-void plateau(char plat[N][N]) {
+void plateau(char plate[N][N]) {
     int i,j;
     char murv = '|'; //mur vertical
     char murh = '-' ; //mur horizontal
@@ -52,51 +58,51 @@ void plateau(char plat[N][N]) {
 
             if (i == 0) { //coordonnées horizontales
                 if(j==0 || j == 1 || j == N-1 || j%2 ==0) {
-                    plat[i][j] = esp;
+                    plate[i][j] = esp;
                 } else {
-                    plat[i][j] = 'a' + j/2 -1;
+                    plate[i][j] = 'a' + j/2 -1;
                 }
             }
 
             else if (i == 1) { //bord horizontale haut
                 for (j = 0; j < N; j++) {
-                    if (j==0) {plat[i][j] = esp;}
+                    if (j==0) {plate[i][j] = esp;}
                     else {
-                        plat[i][j] = murh;
+                        plate[i][j] = murh;
                     }
                 }
             }
 
             else if (i == N-1) { //bord horizontale bas
                 for (j = 0; j < N; j++) {
-                    if (j==0) {plat[i][j] = esp;}
+                    if (j==0) {plate[i][j] = esp;}
                     else {
-                        plat[i][j] = murh;
+                        plate[i][j] = murh;
                     }
                 }
             }
 
             else if (j == 0 && i > 1) { //coordonnées verticales
                 if (i%2 == 0) {
-                    plat[i][j] = esp;
+                    plate[i][j] = esp;
                 }
                 else {
-                    plat[i][j] = 'A' + i/2 - 1;
+                    plate[i][j] = 'A' + i/2 - 1;
                 }
             }
 
             else if (i%2 != 0) //ligne murs horizontals
             {
-                if (j==1 || j==N-1){plat[i][j] = murv;}
-                else if (j%2!=0){plat[i][j] = murc;}
-                else {plat[i][j] = murh;}
+                if (j==1 || j==N-1){plate[i][j] = murv;}
+                else if (j%2!=0){plate[i][j] = murc;}
+                else {plate[i][j] = murh;}
             }
 
             else if (i%2 == 0 && i != N-1) //ligne alternant espaces et murs verticals
             {
-                if (j==1 || j==N-1){plat[i][j] = murv;}
-                else if (j%2 == 0){plat[i][j] = esp;}
-                else {plat[i][j] = murv;}
+                if (j==1 || j==N-1){plate[i][j] = murv;}
+                else if (j%2 == 0){plate[i][j] = esp;}
+                else {plate[i][j] = murv;}
             }
         }
     }
@@ -115,18 +121,18 @@ void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int p
 }
 
 //module d'affichage
-void affiche(char plat[N][N]) {
+void affiche(char plate[N][N]) {
     int i,j;
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
-            printf("%c", plat[i][j]);
+            printf("%c", plate[i][j]);
         }
         printf("\n");
     }
 }
 
 //module pseudo
-void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int nbj)
+void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int *pnbj)
 {
     int j;
     printf("combien il y a-t-il de joueurs?( 2 ou 4 )\n");
@@ -137,9 +143,9 @@ void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int nbj)
         printf("il ne peut y avoir que 2 ou 4 joueurs, combien il y en t-il?");
         scanf("%d",&j);
     }
-    nbj = j;
-    int i;
+    *pnbj = j;
 
+    int i;
     for (i = 0; i < j; i++)
     {
         printf("Entrer le pseudo du joueur %d, avec un maximum de %d caracteres\n", i + 1,longueur_pseudo_max);
@@ -166,8 +172,125 @@ void regle() {
     }
 }
 
+//cas si le pion joué arrive au même endroit qu'un pion présent (fct appelée seulement dans 'move')
+void joueurmalp(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]) {
+    char mvtp;
+    if (nbj == 2){ //cas si le pion joué arrive au même endroit que le pion présent donc deux joueurs
+            printf("Votre pion arrive sur le pion adverse.\n");
+            printf("Vous pouvez passer par dessus le pion adverse.\n");
+            printf("Choisissez dans quelle directions vous voulez aller :\n");
+        do{
+            printf("Si vous voulez deplacer le pion a droite, entrer 'd'\n");
+            printf("Si vous voulez deplacer le pion a gauche, entrer 'g'\n");
+            printf("Si vous voulez deplacer le pion vers le haut, entrer 'h'\n");
+            printf("Si vous voulez deplacer le pion vers le bas, entrer 'b'\n");
+            fflush(stdin);
+            scanf("%c", &mvtp);
+
+            //aller à droite
+            if (mvtp == 'd') {
+                if (pionuti[1]+1 < N) {
+                    pionuti[1] = pionuti[1]+2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+            //aller à gauche
+            else if (mvtp == 'g') {
+                if (pionuti[1]-1 > 0) {
+                    pionuti[1] = pionuti[1]-2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+            //aller en haut
+            else if (mvtp == 'h') {
+                if (pionuti[0]-1 > 1) {
+                    pionuti[0] = pionuti[0]-2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+            //aller en bas
+            else if (mvtp == 'b') {
+                if (pionuti[0]+1 < N) {
+                    pionuti[0] = pionuti[0]+2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+
+
+            else {
+                printf("coup non valide\n");
+            }
+
+        }while (pionuti[0] == pionpres1[0] && pionuti[1] == pionpres1[1]);
+    }
+
+    else if (nbj == 4) {//cas si le pion joué arrive au même endroit qu'un pion présent donc quatre joueurs
+            printf("Votre pion arrive sur un pion adverse.\n");
+            printf("Vous pouvez passer par dessus le pion adverse.\n");
+            printf("Choisissez dans quelle directions vous voulez aller :\n");
+        do{
+            printf("Si vous voulez deplacer le pion a droite, entrer 'd'\n");
+            printf("Si vous voulez deplacer le pion a gauche, entrer 'g'\n");
+            printf("Si vous voulez deplacer le pion vers le haut, entrer 'h'\n");
+            printf("Si vous voulez deplacer le pion vers le bas, entrer 'b'\n");
+            fflush(stdin);
+            scanf("%c", &mvtp);
+
+            //aller à droite
+            if (mvtp == 'd') {
+                if (pionuti[1]+1 < N) {
+                    pionuti[1] = pionuti[1]+2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+            //aller à gauche
+            else if (mvtp == 'g') {
+                if (pionuti[1]-1 > 0) {
+                    pionuti[1] = pionuti[1]-2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+            //aller en haut
+            else if (mvtp == 'h') {
+                if (pionuti[0]-1 > 1) {
+                    pionuti[0] = pionuti[0]-2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+            //aller en bas
+            else if (mvtp == 'b') {
+                if (pionuti[0]+1 < N) {
+                    pionuti[0] = pionuti[0]+2;
+                }
+                else {
+                    printf("coup interdit\n");
+                }
+            }
+
+
+            else {
+                printf("coup non valide\n");
+            }
+
+        }while((pionuti[0] == pionpres1[0] && pionuti[1] == pionpres1[1]) || (pionuti[0] == pionpres2[0] && pionuti[1] == pionpres2[1]) || (pionuti[0] == pionpres3[0] && pionuti[1] == pionpres3[1]));
+    }
+}
 //module déplacement
-void action(int pionuti[3]) {
+void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]){// premier argument = pion à bouger ; deuxieme argument = info du pion présent sur le jeu
     int fin = 1;
     int uti = 1;
     if (pionuti[2] == 102){uti = 2;}
@@ -175,7 +298,7 @@ void action(int pionuti[3]) {
     else if (pionuti[2] == 104){uti = 4;}
     char mvtp;
 
-//toutes les possibilités du joueurs
+    //toutes les possibilités du joueurs
     do {
         printf("Au tour du joueur %d \n",uti);
         printf("Si vous voulez deplacer le pion a droite, entrer 'd'\n");
@@ -185,7 +308,7 @@ void action(int pionuti[3]) {
         fflush(stdin);
         scanf("%c", &mvtp);
 
-//aller à droite
+        //aller à droite
         if (mvtp == 'd') {
             if (pionuti[1]+1 < N) {
                 pionuti[1] = pionuti[1]+2;
@@ -195,7 +318,7 @@ void action(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-//aller à gauche
+        //aller à gauche
         else if (mvtp == 'g') {
             if (pionuti[1]-1 > 0) {
                 pionuti[1] = pionuti[1]-2;
@@ -205,7 +328,7 @@ void action(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-//aller en haut
+        //aller en haut
         else if (mvtp == 'h') {
             if (pionuti[0]-1 > 1) {
                 pionuti[0] = pionuti[0]-2;
@@ -215,7 +338,7 @@ void action(int pionuti[3]) {
                 printf("coup interdit\n");
             }
         }
-//aller en bas
+        //aller en bas
         else if (mvtp == 'b') {
             if (pionuti[0]+1 < N) {
                 pionuti[0] = pionuti[0]+2;
@@ -230,7 +353,7 @@ void action(int pionuti[3]) {
         else {
             printf("coup non valide\n");
         }
-//changement de joueur
+        //changement de joueur
         if(fin == 0)
         {
             if (uti!= 4){//s'il n'y a que 2 joeurs=> uti!= 2
@@ -240,8 +363,18 @@ void action(int pionuti[3]) {
                 uti = 1;
             }
         }
+    }while (fin != 0);//fin du déplacement du joueur
 
-    }while (fin != 0);
+    if(nbj == 2) {
+        if((pionuti[0] == pionpres1[0] && pionuti[1] == pionpres1[1])) {
+            joueurmalp(nbj, pionuti[3], pionpres1[3], pionpres2[3], pionpres3[3]);
+        }
+    }
+    if (nbj == 4) {
+        if ((pionuti[0] == pionpres1[0] && pionuti[1] == pionpres1[1]) || (pionuti[0] == pionpres2[0] && pionuti[1] == pionpres2[1]) || (pionuti[0] == pionpres3[0] && pionuti[1] == pionpres3[1])) {
+            joueurmalp(nbj, pionuti[3], pionpres1[3], pionpres2[3], pionpres3[3]);
+        }
+    }
 }
 void barrieres(){}
 

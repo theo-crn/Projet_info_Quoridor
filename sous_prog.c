@@ -30,7 +30,6 @@ int quitter(int *ch) {
     scanf("%c", &strch);
     if (strch == 'q'){return 0;}
 }
-
 void choixact(int *ch) {
     int fin = 0;
     do {
@@ -379,7 +378,9 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
         }
     }
 }
-void barrieres(){}
+void barrieres() {
+
+}
 
 
 

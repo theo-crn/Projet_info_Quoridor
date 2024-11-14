@@ -53,7 +53,7 @@ int main(void) {
         else if (chact == 2){move(nbj,b,a,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
-        placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
+        placement4(plate,a,b,c,d); //initialisation plateau avec nouveau placement des joueurs
         affiche(plate); //affichage du plateau avec les pions
     }while (choix != 0);
 

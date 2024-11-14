@@ -378,7 +378,9 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
         }
     }
 }
-void barrieres(int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3]){
+
+//module barrières
+void barrieres(int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3],int posmin[8][2],int posMAJ[8][2]){
     char min, MAJ;
     int fin = 0;
     int confirm = 0;

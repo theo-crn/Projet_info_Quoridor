@@ -378,8 +378,31 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
         }
     }
 }
-void barrieres() {
-
+void barrieres(int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3]){
+    char min, MAJ;
+    int fin = 0;
+    int confirm = 0;
+    printf("Afin de placer une barrière,veuillez choisir une coordonnée en minuscule, puis une en MAJUSCULE\n");
+    printf("Ensuite vous choisirez le sens dans lequel vous placerez votre barrière\n");
+    do {
+        do {
+            printf("veuillez choisir une coordonnées minuscule\n");
+            fflush(stdin);
+            scanf("%c",&min);
+            if (min>='a' && min<='z') {fin = 1;}
+        }while(fin !=1 );
+        fin = 0;
+        do {
+            printf("veuillez choisir une coordonnées MAJUSCULE\n");
+            fflush(stdin);
+            scanf("%c",&MAJ);
+            if (MAJ>='A' && MAJ<='Z') {fin = 1;}
+        }while(fin !=1 );
+        printf("Vous avez choisi %c et %c \n",min,MAJ);
+        printf("Entrer 1 pour confirmer, 0 pour reentrer lescoordonnees de la barriere\n");
+        fflush(stdin);
+        scanf("%d",&confirm);
+    }while(confirm != 1);
 }
 
 

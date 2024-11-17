@@ -107,7 +107,7 @@ void plateau(char plate[N][N]) {
     }
 }
 
-//module de placement des joueurs
+//module de placement des joueurs et barrières
 void placement2(char plate[N][N],int piona[3], int pionb[3]) {
     plate[piona[0]][piona[1]] = '1';
     plate[pionb[0]][pionb[1]] = '2';

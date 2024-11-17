@@ -8,13 +8,11 @@ int main(void) {
 
     //chaque point sur le tableau est représenté par un tableau contenant sa position en x, sa position en y et son num d'id
     //les pions on pour id 10n avec n entre 1 et 4
-    //les colonne minuscule on pour id 20n avec n entre 1 et 8
-    //les ligne MAJUSCULE on pour id 30n avec n entre 1 et 8
 
     char plate[N][N]; //plateau de jeu
     //les minuscule et MAJUSCULE auront toujours des positions impaires
-    int posmin[8][2] = {{3,201},{5,202},{7,203},{9,204},{11,205},{13,206},{15,207},{17,208}};  //8 lettres minuscules, {colonne X ;id} / id : 201 = a ... 208 = h
-    int posMAJ[8][2] = {{3,301},{5,302},{7,303},{9,304},{11,305},{13,306},{15,307},{17,308}}; //8 lettres majuscules, {ligne Y;id} /  id : 301 = A ... 308 = H
+    int posmin[8][2] = {{3,'a'},{5,'b'},{7,'c'},{9,'d'},{11,'e'},{13,'f'},{15,'g'},{17,'h'}};  //8 lettres minuscules, {colonne X ;id} / id : 201 = a ... 208 = h
+    int posMAJ[8][2] = {{3,'A'},{5,'B'},{7,'C'},{9,'D'},{11,'E'},{13,'F'},{15,'G'},{17,'H'}}; //8 lettres majuscules, {ligne Y;id} /  id : 301 = A ... 308 = H
 
     //Les pions auront toujours des positions paires
     int a[3] = {2,10,101}; //pion1 {y,x;identification}
@@ -23,12 +21,13 @@ int main(void) {
     int c[3] = {10,2,103}; //pion 3
     int d[3] = {10,18,104}; //pion4
 
-    char name[2][4];
-    int coordb[2];
+    char name[2][4];//liste des pseudos
+    int coordb[2];//cordonnées des barrières
 
-    int chact = 0;
+    int chact = 0;//choix de l'action effectuée par le joueur
     int* poinchact = &chact;
-    int choix = 1;
+
+    int choix = 1;//choix du menu (0 == quitter)
     int* poinchoix = &choix;
 
     int nbj = 2; //choix du nombre de joueur

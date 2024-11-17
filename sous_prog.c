@@ -397,6 +397,7 @@ void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
     int sens;
     int fin = 0;
     int confirm = 0;
+
     printf("Afin de placer une barriere,veuillez choisir une coordonnee en minuscule, puis une en MAJUSCULE\n");
     printf("Ensuite vous choisirez le sens dans lequel vous placerez votre barriere\n");
     do {
@@ -418,8 +419,10 @@ void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
         fflush(stdin);
         scanf("%d",&confirm);
     }while(confirm != 1);
+
     colonne = min;
     ligne = MAJ;
+
     for (int i = 0; i < 8; i++) {
         if (posMAJ[i][1] == colonne) {
             colonne = posMAJ[i][0]; // Récupérer la valeur associée

@@ -24,6 +24,7 @@ int main(void) {
     int d[3] = {10,18,104}; //pion4
 
     char name[2][4];
+    int coordb[2];
 
     int chact = 0;
     int* poinchact = &chact;
@@ -54,17 +55,20 @@ int main(void) {
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {barrieres(plate,2,a,b,c,d,posmin,posMAJ);}
+        if (chact == 1) {barrieres(coordb,posmin,posMAJ);}
         else if (chact == 2){move(nbj,a,b,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
+        placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions
 
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {barrieres(plate,2,a,b,c,d,posmin,posMAJ);}
+        if (chact == 1) {
+            barrieres(coordb,posmin,posMAJ);
+        }
         else if (chact == 2){move(nbj,b,a,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau

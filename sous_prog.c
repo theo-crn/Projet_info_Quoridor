@@ -118,6 +118,17 @@ void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int p
     plate[pionc[0]][pionc[1]] = '3';
     plate[piond[0]][piond[1]] = '4';
 }
+void placementb(char plate[N][N],int coordb[3]) {
+    plate[coordb[0]][coordb[1]] = 'B';
+    if(coordb[2] == 1) {
+        plate[coordb[0]][coordb[1]+1] = 'B';
+        plate[coordb[0]][coordb[1]-1] = 'B';
+    }
+    else if(coordb[2] == 2) {
+        plate[coordb[0]+1][coordb[1]] = 'B';
+        plate[coordb[0]-1][coordb[1]] = 'B';
+    }
+}
 
 //module d'affichage
 void affiche(char plate[N][N]) {
@@ -380,9 +391,10 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
 }
 
 //module barrières
-void barrieres(char plate[N][N],int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3],int posmin[8][2],int posMAJ[8][2]){
-    char min, MAJ,sens;
+void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
+    char min, MAJ;
     int ligne = 0,colonne = 0;
+    int sens;
     int fin = 0;
     int confirm = 0;
     printf("Afin de placer une barriere,veuillez choisir une coordonnee en minuscule, puis une en MAJUSCULE\n");
@@ -406,8 +418,8 @@ void barrieres(char plate[N][N],int nbj, int pionpres1[3],int pionpres2[3],int p
         fflush(stdin);
         scanf("%d",&confirm);
     }while(confirm != 1);
-    colonne = MAJ;
-    ligne = min;
+    colonne = min;
+    ligne = MAJ;
     for (int i = 0; i < 8; i++) {
         if (posMAJ[i][1] == colonne) {
             colonne = posMAJ[i][0]; // Récupérer la valeur associée
@@ -415,30 +427,19 @@ void barrieres(char plate[N][N],int nbj, int pionpres1[3],int pionpres2[3],int p
         }
     }
     for (int i = 0; i < 8; i++) {
-        if (posMAJ[i][1] == ligne) {
+        if (posmin[i][1] == ligne) {
             ligne = posmin[i][0]; // Récupérer la valeur associée
             break; // Pas besoin de continuer une fois trouvé
         }
     }
-    plate[ligne][colonne] = 'B';
-    printf("Choisissez le sens de votre barriere ");
-    printf("'v' pour qu'elle soit verticale et 'h' pour qu'elle soit horizontale");
+    coordb[0] = ligne;
+    coordb[1] = colonne;
+
+    printf("Choisissez le sens de votre barriere\n ");
+    printf("'1' pour qu'elle soit verticale et '2' pour qu'elle soit horizontale");
     fflush(stdin);
-    scanf("%c",&sens);
-    if (sens=='h') {
-        plate[ligne - 1][colonne] = 'B';
-        plate[ligne + 1][colonne] = 'B';
-    }
-    else if (sens=='v') {
-        plate[ligne][colonne - 1] = 'B';
-        plate[ligne][colonne + 1] = 'B';
-    }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            printf("%c ", plate[i][j]);
-        }
-        printf("\n");
-    }
+    scanf("%i",&sens);
+    coordb[2] = sens;
 }
 
 

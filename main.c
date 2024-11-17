@@ -54,7 +54,7 @@ int main(void) {
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {printf("barrieres");}
+        if (chact == 1) {barrieres(plate,2,a,b,c,d,posmin,posMAJ);}
         else if (chact == 2){move(nbj,a,b,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
@@ -64,7 +64,7 @@ int main(void) {
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {printf("barrieres");}
+        if (chact == 1) {barrieres(plate,2,a,b,c,d,posmin,posMAJ);}
         else if (chact == 2){move(nbj,b,a,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau

@@ -29,5 +29,5 @@ void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max],int *pnbj);//fon
 //FONCTIONS POUR JOUER :
 void joueurmalp(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]);//cas si le pion joué arrive au même endroit qu'un pion présent (fct appelée seulement dans 'move')
 void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]);//fonction qui affiche les actions du pion, contient lenb de joueurs et leur positions à tous
-void barrieres(int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3],int posmin[8][2],int posMAJ[8][2]);
+void barrieres(char plate[N][N],int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3],int posmin[8][2],int posMAJ[8][2]);
 #endif //SOUS_PROG_H

@@ -380,31 +380,65 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
 }
 
 //module barrières
-void barrieres(int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3],int posmin[8][2],int posMAJ[8][2]){
-    char min, MAJ;
+void barrieres(char plate[N][N],int nbj, int pionpres1[3],int pionpres2[3],int pionpres3[3],int pionpres4[3],int posmin[8][2],int posMAJ[8][2]){
+    char min, MAJ,sens;
+    int ligne = 0,colonne = 0;
     int fin = 0;
     int confirm = 0;
-    printf("Afin de placer une barrière,veuillez choisir une coordonnée en minuscule, puis une en MAJUSCULE\n");
-    printf("Ensuite vous choisirez le sens dans lequel vous placerez votre barrière\n");
+    printf("Afin de placer une barriere,veuillez choisir une coordonnee en minuscule, puis une en MAJUSCULE\n");
+    printf("Ensuite vous choisirez le sens dans lequel vous placerez votre barriere\n");
     do {
         do {
-            printf("veuillez choisir une coordonnées minuscule\n");
+            printf("veuillez choisir une coordonnees minuscule\n");
             fflush(stdin);
             scanf("%c",&min);
-            if (min>='a' && min<='z') {fin = 1;}
+            if (min>='a' && min<='h') {fin = 1;}
         }while(fin !=1 );
         fin = 0;
         do {
-            printf("veuillez choisir une coordonnées MAJUSCULE\n");
+            printf("veuillez choisir une coordonnees MAJUSCULE\n");
             fflush(stdin);
             scanf("%c",&MAJ);
-            if (MAJ>='A' && MAJ<='Z') {fin = 1;}
+            if (MAJ>='A' && MAJ<='H') {fin = 1;}
         }while(fin !=1 );
         printf("Vous avez choisi %c et %c \n",min,MAJ);
-        printf("Entrer 1 pour confirmer, 0 pour reentrer lescoordonnees de la barriere\n");
+        printf("Entrer 1 pour confirmer, 0 pour reentrer les coordonnees de la barriere\n");
         fflush(stdin);
         scanf("%d",&confirm);
     }while(confirm != 1);
+    colonne = MAJ;
+    ligne = min;
+    for (int i = 0; i < 8; i++) {
+        if (posMAJ[i][1] == colonne) {
+            colonne = posMAJ[i][0]; // Récupérer la valeur associée
+            break; // Pas besoin de continuer une fois trouvé
+        }
+    }
+    for (int i = 0; i < 8; i++) {
+        if (posMAJ[i][1] == ligne) {
+            ligne = posmin[i][0]; // Récupérer la valeur associée
+            break; // Pas besoin de continuer une fois trouvé
+        }
+    }
+    plate[ligne][colonne] = 'B';
+    printf("Choisissez le sens de votre barriere ");
+    printf("'v' pour qu'elle soit verticale et 'h' pour qu'elle soit horizontale");
+    fflush(stdin);
+    scanf("%c",&sens);
+    if (sens=='h') {
+        plate[ligne - 1][colonne] = 'B';
+        plate[ligne + 1][colonne] = 'B';
+    }
+    else if (sens=='v') {
+        plate[ligne][colonne - 1] = 'B';
+        plate[ligne][colonne + 1] = 'B';
+    }
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("%c ", plate[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 

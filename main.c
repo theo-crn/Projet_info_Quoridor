@@ -45,25 +45,20 @@ int main(void) {
             return 0;
         }
 
-    printf("ok");
         plateau(plate); //initialisation plateau
-        printf("ok2");
         if (nbj == 2) {
             placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
-            printf("ok3");
         }
         else if (nbj == 4) {
             placement4(plate,a,b,c,d);
-            printf("ok4");
         }//placement des pions en début de jeu pour quatre joueurs
-        printf("ok5");
         affiche(plate); //affichage du plateau avec les pions
 
 
         choixact(poinchact);
         printf("%d\n",chact);
         if (chact == 1) {barrieres(coordb,posmin,posMAJ);}
-        else if (chact == 2){move(nbj,a,b,c,d);}//déplacement du premier joueur
+        else if (chact == 2){move(plate,nbj,a,b,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
@@ -74,7 +69,11 @@ int main(void) {
         choixact(poinchact);
         printf("%d\n",chact);
         if (chact == 1) {barrieres(coordb,posmin,posMAJ);}
-        else if (chact == 2){move(nbj,b,a,c,d);}//déplacement du premier joueur
+        else if (chact == 2){move(plate,nbj,b,a,c,d);}//déplacement du premier joueur
+        plateau(plate); //remise a 0 du plateau
+        placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
+        placementb(plate,coordb);
+        affiche(plate); //affichage du plateau avec les pions
 
         plateau(plate); //remise a 0 du plateau
         placement4(plate,a,b,c,d); //initialisation plateau avec nouveau placement des joueurs

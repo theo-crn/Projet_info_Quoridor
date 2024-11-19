@@ -113,19 +113,10 @@ void placement2(char plate[N][N],int piona[3], int pionb[3]) {
     plate[pionb[0]][pionb[1]] = 04;
 }
 void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int piond[3]) {
-    printf("oui\n");
-    printf("%d,%d\n",piona[0],piona[1]);
-    printf("%d,%d\n",pionb[0],pionb[1]);
-    printf("%d,%d\n",pionc[0],pionc[1]);
-    printf("%d,%d\n",piond[0],piond[1]);
     plate[piona[0]][piona[1]] = 03;
-    printf("%d,%d\n",piona[0],piona[1]);
     plate[pionb[0]][pionb[1]] = 04;
-    printf("%d,%d\n",pionb[0],pionb[1]);
     plate[pionc[0]][pionc[1]] = 05;
-    printf("%d,%d\n",pionc[0],pionc[1]);
     plate[piond[0]][piond[1]] = 06;
-    printf("%d,%d\n",piond[0],piond[1]);
 }
 void placementb(char plate[N][N],int coordb[3]) {
     plate[coordb[0]][coordb[1]] = 'B';
@@ -315,7 +306,7 @@ void joueurmalp(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int 
     }
 }
 //module placement
-void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]){// premier argument = pion à bouger ; deuxieme argument = info du pion présent sur le jeu
+void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]){// premier argument = pion à bouger ; deuxieme argument = info du pion présent sur le jeu
     int fin = 1;
     int uti = 1;
     if (pionuti[2] == 102){uti = 2;}
@@ -335,7 +326,7 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
 
         //aller à droite
         if (mvtp == 'd') {
-            if (pionuti[1]+1 < N) {
+            if (pionuti[1]+1 < N && plate[pionuti[0]][pionuti[1]+1] != 'B') {
                 pionuti[1] = pionuti[1]+2;
                 fin = 0;
             }
@@ -345,7 +336,7 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
         }
         //aller à gauche
         else if (mvtp == 'g') {
-            if (pionuti[1]-1 > 0) {
+            if (pionuti[1]-1 > 0 && plate[pionuti[0]][pionuti[1]-1] != 'B') {
                 pionuti[1] = pionuti[1]-2;
                 fin = 0;
             }
@@ -355,7 +346,7 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
         }
         //aller en haut
         else if (mvtp == 'h') {
-            if (pionuti[0]-1 > 1) {
+            if (pionuti[0]-1 > 1 && plate[pionuti[0]-1][pionuti[1]] != 'B') {
                 pionuti[0] = pionuti[0]-2;
                 fin = 0;
             }
@@ -365,7 +356,7 @@ void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpr
         }
         //aller en bas
         else if (mvtp == 'b') {
-            if (pionuti[0]+1 < N) {
+            if (pionuti[0]+1 < N && plate[pionuti[0]+1][pionuti[1]] != 'B') {
                 pionuti[0] = pionuti[0]+2;
                 fin = 0;
             }
@@ -435,13 +426,11 @@ void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
     colonne = 2*(min - 97) + 3;
     coordb[0] = ligne;
     coordb[1] = colonne;
-    printf("%d %d",ligne,colonne);
 
     printf("Choisissez le sens de votre barriere\n ");
     printf("'1' pour qu'elle soit verticale et '2' pour qu'elle soit horizontale\n");
     fflush(stdin);
     scanf("%i",&sens);
-    printf("%i",sens);
     printf("marche\n");
     coordb[2] = sens;
 }

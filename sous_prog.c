@@ -1,5 +1,5 @@
 //
-// Created by theop on 18/10/2024.
+// Created by theop on 05/11/2024.
 //
 #include <stdio.h>
 #include <string.h>
@@ -109,26 +109,38 @@ void plateau(char plate[N][N]) {
 
 //module de placement des joueurs et barrières
 void placement2(char plate[N][N],int piona[3], int pionb[3]) {
-    plate[piona[0]][piona[1]] = '1';
-    plate[pionb[0]][pionb[1]] = '2';
+    plate[piona[0]][piona[1]] = 03;
+    plate[pionb[0]][pionb[1]] = 04;
 }
 void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int piond[3]) {
-    plate[piona[0]][piona[1]] = '1';
-    plate[pionb[0]][pionb[1]] = '2';
-    plate[pionc[0]][pionc[1]] = '3';
-    plate[piond[0]][piond[1]] = '4';
+    printf("oui\n");
+    printf("%d,%d\n",piona[0],piona[1]);
+    printf("%d,%d\n",pionb[0],pionb[1]);
+    printf("%d,%d\n",pionc[0],pionc[1]);
+    printf("%d,%d\n",piond[0],piond[1]);
+    plate[piona[0]][piona[1]] = 03;
+    printf("%d,%d\n",piona[0],piona[1]);
+    plate[pionb[0]][pionb[1]] = 04;
+    printf("%d,%d\n",pionb[0],pionb[1]);
+    plate[pionc[0]][pionc[1]] = 'a';
+    printf("%d,%d\n",pionc[0],pionc[1]);
+    plate[piond[0]][piond[1]] = 06;
+    printf("%d,%d\n",piond[0],piond[1]);
 }
-void placementb(char plate[N][N],int coordb[3]) {
+/*void placementb(char plate[N][N],int coordb[3]) {
     plate[coordb[0]][coordb[1]] = 'B';
+    printf("B\n");
     if(coordb[2] == 1) {
         plate[coordb[0]][coordb[1]+1] = 'B';
         plate[coordb[0]][coordb[1]-1] = 'B';
+        printf("1\n");
     }
     else if(coordb[2] == 2) {
         plate[coordb[0]+1][coordb[1]] = 'B';
         plate[coordb[0]-1][coordb[1]] = 'B';
+        printf("2\n");
     }
-}
+}*/
 
 //module d'affichage
 void affiche(char plate[N][N]) {
@@ -142,7 +154,7 @@ void affiche(char plate[N][N]) {
 }
 
 //module pseudo
-void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int *pnbj)
+void crpseudo(char pseudo[nb_pseudo_max][longueur_pseudo_max], int *pnbj)
 {
     int j;
     printf("combien il y a-t-il de joueurs?( 2 ou 4 )\n");
@@ -160,7 +172,7 @@ void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max], int *pnbj)
     int i;
     for (i = 0; i < j; i++)
     {
-        printf("Entrer le pseudo du joueur %d, avec un maximum de %d caracteres\n", i + 1,longueur_pseudo_max);
+        printf("Entrer le pseudo du joueur %d, avec un maximum de %d caracteres\n", i + 1,longueur_pseudo_max-1);
         //utilisation de fgets qui lit et met un texte dans un tableau jusqu'au \n et ne lit jusqu'au n-1ieme terme
         //stdin comme un scanf, va avec le fgets
         fflush(stdin);
@@ -302,7 +314,7 @@ void joueurmalp(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int 
         }while((pionuti[0] == pionpres1[0] && pionuti[1] == pionpres1[1]) || (pionuti[0] == pionpres2[0] && pionuti[1] == pionpres2[1]) || (pionuti[0] == pionpres3[0] && pionuti[1] == pionpres3[1]));
     }
 }
-//module déplacement
+//module placement
 void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]){// premier argument = pion à bouger ; deuxieme argument = info du pion présent sur le jeu
     int fin = 1;
     int uti = 1;
@@ -439,13 +451,10 @@ void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
     coordb[1] = colonne;
 
     printf("Choisissez le sens de votre barriere\n ");
-    printf("'1' pour qu'elle soit verticale et '2' pour qu'elle soit horizontale");
+    printf("'1' pour qu'elle soit verticale et '2' pour qu'elle soit horizontale\n");
     fflush(stdin);
     scanf("%i",&sens);
-    coordb[2] = sens;
+    printf("%i",sens);
+    printf("marche\n");
+    //coordb[2] = sens;
 }
-
-
-
-
-

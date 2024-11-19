@@ -1,11 +1,13 @@
 //
-// Created by theop on 18/10/2024.
+// Created by theop on 05/11/2024.
 //
 
 #ifndef SOUS_PROG_H
 #define N 20 //taille du plateau
-#define longueur_pseudo_max 20 //taille maximum des pseudos
+#define longueur_pseudo_max 21 //taille maximum des pseudos
 #define nb_pseudo_max 4 //nombre de pseudo maximum
+
+#define SOUS_PROG_H
 
 #define SOUS_PROG_H
 
@@ -18,7 +20,7 @@ void choixact(int *ch); //menu pour que le joueur choisisse s'il veut poser une 
 void plateau(char plate[N][N]);//fonction qui cree le plateau de jeu
 void placement2(char plate[N][N],int piona[3], int pionb[3]);//fonction qui met a jour le plateau pour deux joueurs
 void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int piond[3]);//fonction qui met a jour le plateau pour quatre joueurs
-void placementb(char plate[N][N],int coordb[3]);
+//void placementb(char plate[N][N],int coordb[3]);
 void affiche(char plate[N][N]);//fonction qui affiche le plateau de jeu
 
 //FONCTIONS REGLE ET SCORE :
@@ -31,4 +33,7 @@ void crpseudo(char pseudo[nb_pseudo_max+1][longueur_pseudo_max],int *pnbj);//fon
 void joueurmalp(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]);//cas si le pion joué arrive au même endroit qu'un pion présent (fct appelée seulement dans 'move')
 void move(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]);//fonction qui affiche les actions du pion, contient lenb de joueurs et leur positions à tous
 void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]);
+
 #endif //SOUS_PROG_H
+
+

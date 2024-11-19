@@ -21,7 +21,7 @@ int main(void) {
     int c[3] = {10,2,103}; //pion 3
     int d[3] = {10,18,104}; //pion4
 
-    char name[2][4];//liste des pseudos
+    char name[nb_pseudo_max][longueur_pseudo_max];//liste des pseudos
     int coordb[2];//cordonnées des barrières
 
     int chact = 0;//choix de l'action effectuée par le joueur
@@ -45,10 +45,18 @@ int main(void) {
             return 0;
         }
 
-
+    printf("ok");
         plateau(plate); //initialisation plateau
-        if (nbj == 2){placement2(plate,a,b);} //placement des pions en début de jeu pour deux joueurs
-        else if (nbj == 4){placement4(plate,a,b,c,d);}//placement des pions en début de jeu pour quatre joueurs
+        printf("ok2");
+        if (nbj == 2) {
+            placement2(plate,a,b); //placement des pions en début de jeu pour deux joueurs
+            printf("ok3");
+        }
+        else if (nbj == 4) {
+            placement4(plate,a,b,c,d);
+            printf("ok4");
+        }//placement des pions en début de jeu pour quatre joueurs
+        printf("ok5");
         affiche(plate); //affichage du plateau avec les pions
 
 
@@ -59,15 +67,13 @@ int main(void) {
 
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
-        placementb(plate,coordb);
+        //placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions
 
 
         choixact(poinchact);
         printf("%d\n",chact);
-        if (chact == 1) {
-            barrieres(coordb,posmin,posMAJ);
-        }
+        if (chact == 1) {barrieres(coordb,posmin,posMAJ);}
         else if (chact == 2){move(nbj,b,a,c,d);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
@@ -77,3 +83,5 @@ int main(void) {
 
     return 0;
 }
+
+

@@ -306,7 +306,7 @@ void joueurmalp(int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int 
     }
 }
 //module placement
-void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3]){// premier argument = pion à bouger ; deuxieme argument = info du pion présent sur le jeu
+void move(char plate[N][N],int nbj, int pionuti[3],int pionpres1[3], int pionpres2[3], int pionpres3[3],int gagn[2]){// premier argument = pion à bouger ; deuxieme argument = info du pion présent sur le jeu
     int fin = 1;
     int uti = 1;
     if (pionuti[2] == 102){uti = 2;}

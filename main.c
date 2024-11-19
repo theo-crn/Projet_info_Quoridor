@@ -33,6 +33,11 @@ int main(void) {
     int nbj = 2; //choix du nombre de joueur
     int* pnbj = &nbj;
 
+    int gagn[2] = {1,0};//fin du jeu si un joueur arrive a l'opposé du terrain
+    int idjg = 0; //numero du joueur gagnant
+
+    int score[4][2] = {{101,0},{102,0},{103,0},{104,0}};//sauvegarde des scores de chacun des joueurs, {id,score}
+
     regle();
 
 
@@ -58,7 +63,7 @@ int main(void) {
         choixact(poinchact);
         printf("%d\n",chact);
         if (chact == 1) {barrieres(coordb,posmin,posMAJ);}
-        else if (chact == 2){move(plate,nbj,a,b,c,d);}//déplacement du premier joueur
+        else if (chact == 2){move(plate,nbj,a,b,c,d,gagn);}//déplacement du premier joueur
 
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
@@ -69,7 +74,7 @@ int main(void) {
         choixact(poinchact);
         printf("%d\n",chact);
         if (chact == 1) {barrieres(coordb,posmin,posMAJ);}
-        else if (chact == 2){move(plate,nbj,b,a,c,d);}//déplacement du premier joueur
+        else if (chact == 2){move(plate,nbj,b,a,c,d,gagn);}//déplacement du premier joueur
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
         placementb(plate,coordb);
@@ -78,8 +83,8 @@ int main(void) {
         plateau(plate); //remise a 0 du plateau
         placement4(plate,a,b,c,d); //initialisation plateau avec nouveau placement des joueurs
         affiche(plate); //affichage du plateau avec les pions
-    }while (choix != 0);
-
+    }while (choix != 0 || gagn[0] != 0);
+    if (gagn[0] == 0) {printf("Bravo aux joueur ");}
     return 0;
 }
 

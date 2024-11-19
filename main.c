@@ -11,8 +11,8 @@ int main(void) {
 
     char plate[N][N]; //plateau de jeu
     //les minuscule et MAJUSCULE auront toujours des positions impaires
-    int posmin[8][2] = {{3,'a'},{5,'b'},{7,'c'},{9,'d'},{11,'e'},{13,'f'},{15,'g'},{17,'h'}};  //8 lettres minuscules, {colonne X ;id} / id : 201 = a ... 208 = h
-    int posMAJ[8][2] = {{3,'A'},{5,'B'},{7,'C'},{9,'D'},{11,'E'},{13,'F'},{15,'G'},{17,'H'}}; //8 lettres majuscules, {ligne Y;id} /  id : 301 = A ... 308 = H
+    int posmin[8][2] = {{3,97},{5,98},{7,99},{9,100},{11,101},{13,102},{15,103},{17,104}};  //8 lettres minuscules, {colonne X ;id} / id : 201 = a ... 208 = h
+    int posMAJ[8][2] = {{3,65},{5,66},{7,67},{9,68},{11,69},{13,70},{15,71},{17,72}}; //8 lettres majuscules, {ligne Y;id} /  id : 301 = A ... 308 = H
 
     //Les pions auront toujours des positions paires
     int a[3] = {2,10,101}; //pion1 {y,x;identification}
@@ -67,7 +67,7 @@ int main(void) {
 
         plateau(plate); //remise a 0 du plateau
         placement2(plate,a,b); //initialisation plateau avec nouveau placement des joueurs
-        //placementb(plate,coordb);
+        placementb(plate,coordb);
         affiche(plate); //affichage du plateau avec les pions
 
 

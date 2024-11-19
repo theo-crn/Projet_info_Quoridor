@@ -122,25 +122,25 @@ void placement4(char plate[N][N],int piona[3], int pionb[3], int pionc[3], int p
     printf("%d,%d\n",piona[0],piona[1]);
     plate[pionb[0]][pionb[1]] = 04;
     printf("%d,%d\n",pionb[0],pionb[1]);
-    plate[pionc[0]][pionc[1]] = 'a';
+    plate[pionc[0]][pionc[1]] = 05;
     printf("%d,%d\n",pionc[0],pionc[1]);
     plate[piond[0]][piond[1]] = 06;
     printf("%d,%d\n",piond[0],piond[1]);
 }
-/*void placementb(char plate[N][N],int coordb[3]) {
+void placementb(char plate[N][N],int coordb[3]) {
     plate[coordb[0]][coordb[1]] = 'B';
     printf("B\n");
-    if(coordb[2] == 1) {
+    if(coordb[2] == 2) {
         plate[coordb[0]][coordb[1]+1] = 'B';
         plate[coordb[0]][coordb[1]-1] = 'B';
         printf("1\n");
     }
-    else if(coordb[2] == 2) {
+    else if(coordb[2] == 1) {
         plate[coordb[0]+1][coordb[1]] = 'B';
         plate[coordb[0]-1][coordb[1]] = 'B';
         printf("2\n");
     }
-}*/
+}
 
 //module d'affichage
 void affiche(char plate[N][N]) {
@@ -431,24 +431,11 @@ void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
         fflush(stdin);
         scanf("%d",&confirm);
     }while(confirm != 1);
-
-    colonne = min;
-    ligne = MAJ;
-
-    for (int i = 0; i < 8; i++) {
-        if (posMAJ[i][1] == colonne) {
-            colonne = posMAJ[i][0]; // Récupérer la valeur associée
-            break; // Pas besoin de continuer une fois trouvé
-        }
-    }
-    for (int i = 0; i < 8; i++) {
-        if (posmin[i][1] == ligne) {
-            ligne = posmin[i][0]; // Récupérer la valeur associée
-            break; // Pas besoin de continuer une fois trouvé
-        }
-    }
+    ligne = 2*(MAJ - 65) + 3;
+    colonne = 2*(min - 97) + 3;
     coordb[0] = ligne;
     coordb[1] = colonne;
+    printf("%d %d",ligne,colonne);
 
     printf("Choisissez le sens de votre barriere\n ");
     printf("'1' pour qu'elle soit verticale et '2' pour qu'elle soit horizontale\n");
@@ -456,5 +443,5 @@ void barrieres(int coordb[3],int posmin[8][2],int posMAJ[8][2]) {
     scanf("%i",&sens);
     printf("%i",sens);
     printf("marche\n");
-    //coordb[2] = sens;
+    coordb[2] = sens;
 }

@@ -1,10 +1,10 @@
-"C:\Users\pierr\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\pierr\Documents\Info\Projet_info_Quoridor -B C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor -B C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug
 -- The C compiler identification is GNU 13.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Users/pierr/CLion 2024.2.1/bin/mingw/bin/gcc.exe - skipped
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.2.1/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (13.4s)
+-- Configuring done (2.9s)
 -- Generating done (0.0s)
--- Build files have been written to: C:/Users/pierr/Documents/Info/Projet_info_Quoridor/cmake-build-debug
+-- Build files have been written to: C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/cmake-build-debug

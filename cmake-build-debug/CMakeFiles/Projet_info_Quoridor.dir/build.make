@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Users\pierr\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Users\pierr\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\pierr\Documents\Info\Projet_info_Quoridor
+CMAKE_SOURCE_DIR = C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Projet_info_Quoridor.dir/depend.make
@@ -69,32 +69,32 @@ include CMakeFiles/Projet_info_Quoridor.dir/progress.make
 include CMakeFiles/Projet_info_Quoridor.dir/flags.make
 
 CMakeFiles/Projet_info_Quoridor.dir/main.c.obj: CMakeFiles/Projet_info_Quoridor.dir/flags.make
-CMakeFiles/Projet_info_Quoridor.dir/main.c.obj: C:/Users/pierr/Documents/Info/Projet_info_Quoridor/main.c
+CMakeFiles/Projet_info_Quoridor.dir/main.c.obj: C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/main.c
 CMakeFiles/Projet_info_Quoridor.dir/main.c.obj: CMakeFiles/Projet_info_Quoridor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Projet_info_Quoridor.dir/main.c.obj"
-	C:\Users\pierr\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_info_Quoridor.dir/main.c.obj -MF CMakeFiles\Projet_info_Quoridor.dir\main.c.obj.d -o CMakeFiles\Projet_info_Quoridor.dir\main.c.obj -c C:\Users\pierr\Documents\Info\Projet_info_Quoridor\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Projet_info_Quoridor.dir/main.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_info_Quoridor.dir/main.c.obj -MF CMakeFiles\Projet_info_Quoridor.dir\main.c.obj.d -o CMakeFiles\Projet_info_Quoridor.dir\main.c.obj -c C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\main.c
 
 CMakeFiles/Projet_info_Quoridor.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Projet_info_Quoridor.dir/main.c.i"
-	C:\Users\pierr\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\pierr\Documents\Info\Projet_info_Quoridor\main.c > CMakeFiles\Projet_info_Quoridor.dir\main.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\main.c > CMakeFiles\Projet_info_Quoridor.dir\main.c.i
 
 CMakeFiles/Projet_info_Quoridor.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_info_Quoridor.dir/main.c.s"
-	C:\Users\pierr\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pierr\Documents\Info\Projet_info_Quoridor\main.c -o CMakeFiles\Projet_info_Quoridor.dir\main.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\main.c -o CMakeFiles\Projet_info_Quoridor.dir\main.c.s
 
 CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj: CMakeFiles/Projet_info_Quoridor.dir/flags.make
-CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj: C:/Users/pierr/Documents/Info/Projet_info_Quoridor/sous_prog.c
+CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj: C:/Users/33749/Documents/ECE/INFORMATIQUE/Projet/Projet_info_Quoridor/sous_prog.c
 CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj: CMakeFiles/Projet_info_Quoridor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj"
-	C:\Users\pierr\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj -MF CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.obj.d -o CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.obj -c C:\Users\pierr\Documents\Info\Projet_info_Quoridor\sous_prog.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.obj -MF CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.obj.d -o CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.obj -c C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\sous_prog.c
 
 CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.i"
-	C:\Users\pierr\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\pierr\Documents\Info\Projet_info_Quoridor\sous_prog.c > CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\sous_prog.c > CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.i
 
 CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Projet_info_Quoridor.dir/sous_prog.c.s"
-	C:\Users\pierr\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pierr\Documents\Info\Projet_info_Quoridor\sous_prog.c -o CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\sous_prog.c -o CMakeFiles\Projet_info_Quoridor.dir\sous_prog.c.s
 
 # Object files for target Projet_info_Quoridor
 Projet_info_Quoridor_OBJECTS = \
@@ -110,7 +110,7 @@ Projet_info_Quoridor.exe: CMakeFiles/Projet_info_Quoridor.dir/build.make
 Projet_info_Quoridor.exe: CMakeFiles/Projet_info_Quoridor.dir/linkLibs.rsp
 Projet_info_Quoridor.exe: CMakeFiles/Projet_info_Quoridor.dir/objects1.rsp
 Projet_info_Quoridor.exe: CMakeFiles/Projet_info_Quoridor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Projet_info_Quoridor.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Projet_info_Quoridor.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Projet_info_Quoridor.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -122,6 +122,6 @@ CMakeFiles/Projet_info_Quoridor.dir/clean:
 .PHONY : CMakeFiles/Projet_info_Quoridor.dir/clean
 
 CMakeFiles/Projet_info_Quoridor.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\pierr\Documents\Info\Projet_info_Quoridor C:\Users\pierr\Documents\Info\Projet_info_Quoridor C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug C:\Users\pierr\Documents\Info\Projet_info_Quoridor\cmake-build-debug\CMakeFiles\Projet_info_Quoridor.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug C:\Users\33749\Documents\ECE\INFORMATIQUE\Projet\Projet_info_Quoridor\cmake-build-debug\CMakeFiles\Projet_info_Quoridor.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Projet_info_Quoridor.dir/depend
 
